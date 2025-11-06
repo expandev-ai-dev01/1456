@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 /**
  * @page HomePage
  * @summary Home page - welcome screen for TODO list application
@@ -6,6 +8,8 @@
  * @category public
  */
 export const HomePage = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4">
       <div className="text-center max-w-2xl">
@@ -16,6 +20,14 @@ export const HomePage = () => {
           <p className="text-gray-600 mb-4">
             Organize suas tarefas de forma eficiente com nosso sistema completo de gerenciamento.
           </p>
+
+          <button
+            onClick={() => navigate('/tasks/new')}
+            className="mb-6 px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors font-semibold"
+          >
+            Criar Nova Tarefa
+          </button>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
             <div className="p-4 bg-blue-50 rounded-md">
               <h3 className="font-semibold text-blue-900 mb-2">Criação de Tarefas</h3>
